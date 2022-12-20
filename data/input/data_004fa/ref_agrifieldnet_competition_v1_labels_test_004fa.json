@@ -1,0 +1,82 @@
+{
+    "type": "Feature",
+    "stac_version": "1.0.0",
+    "id": "ref_agrifieldnet_competition_v1_labels_test_004fa",
+    "properties": {
+        "datetime": null,
+        "start_datetime": "2022-01-01T00:00:00+00:00",
+        "end_datetime": "2022-05-31T00:00:00+00:00"
+    },
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    83.02182751921237,
+                    19.27487401218633
+                ],
+                [
+                    83.02211145974293,
+                    19.297995285843214
+                ],
+                [
+                    82.99775974241012,
+                    19.298263452573703
+                ],
+                [
+                    82.99747921571804,
+                    19.27514183292262
+                ],
+                [
+                    83.02182751921237,
+                    19.27487401218633
+                ]
+            ]
+        ]
+    },
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "collection",
+            "href": "../collection.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "parent",
+            "href": "../collection.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "self",
+            "href": "ref_agrifieldnet_competition_v1_labels_test_004fa.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "source",
+            "href": "../../ref_agrifieldnet_competition_v1_source/ref_agrifieldnet_competition_v1_source_004fa/ref_agrifieldnet_competition_v1_source_004fa.json",
+            "type": "application/json"
+        }
+    ],
+    "assets": {
+        "field_ids": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/test_labels/ref_agrifieldnet_competition_v1_labels_test_004fa_field_ids.tif",
+            "type": "image/tiff; application=geotiff"
+        },
+        "documentation": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/Documentation.pdf",
+            "type": "application/pdf"
+        }
+    },
+    "bbox": [
+        82.99747921571804,
+        19.27487401218633,
+        83.02211145974293,
+        19.298263452573703
+    ],
+    "stac_extensions": [],
+    "collection": "ref_agrifieldnet_competition_v1_labels_test"
+}

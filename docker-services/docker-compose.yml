@@ -1,0 +1,15 @@
+version: "3"
+services:
+
+  model_radiant_3:
+    image:  skamot/model_radiant:4
+    volumes:
+      - "${INPUT_DATA}:/opt/radiant/docker-solution/data/input"
+      - "${OUTPUT_DATA}:/opt/radiant/docker-solution/data/output"
+      - "${MODELS_DIR}:/opt/radiant/docker-solution/models"
+      - "${WORKSPACE_DIR}:/opt/radiant/docker-solution/workspace"
+    environment:
+      - INPUT_DATA=/opt/radiant/docker-solution/data/input
+      - OUTPUT_DATA=/opt/radiant/docker-solution/data/output
+      - MODELS_DIR=/opt/radiant/docker-solution/models
+      - WORKSPACE_DIR=/opt/radiant/docker-solution/workspace
