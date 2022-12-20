@@ -1,9 +1,6 @@
 # Looking further: a crop type classification model for fields
 
-This model classifies crop types for each field based on the field as well as
-on its surroundings.
-
-In the [Zindi AgriFieldNet competition](https://zindi.africa/competitions/agrifieldnet-india-challenge)
+In the [Zindi AgriFieldNet India Challenge](https://zindi.africa/competitions/agrifieldnet-india-challenge)
 this was the third place solution by the team `re-union` in the final round to classify crop
 types in agricultural fields across Northern India using multispectral
 observations from Sentinel-2 satellite.
