@@ -103,6 +103,7 @@ docker build -t radiantearth/model_ecaas_agrifieldnet_bronze:1 .
 3. Run the appropriate Docker Compose command for your system:
 
     ```bash
+    cd docker-services/
     docker compose up model_ecaas_agrifieldnet_bronze_v1
     ```
 
