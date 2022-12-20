@@ -35,18 +35,20 @@ publish it to [MLHub](https://mlhub.earth/models).
 
 }}
 
-# {{ Model Name (one line) }}
+# Looking further
 
-{{ Model Description (paragraph) }}
+This model classifies crop types for each field based on the field as well as on its surroundings.
 
-![{{model_id}}](https://radiantmlhub.blob.core.windows.net/frontend-dataset-images/odk_sample_agricultural_dataset.png)
+![model_ecaas_agrifieldnet_bronze_v1](https://radiantmlhub.blob.core.windows.net/frontend-dataset-images/odk_sample_agricultural_dataset.png)
 
-MLHub model id: `{{model_id}}`. Browse on [Radiant MLHub](https://mlhub.earth/model/{{model_id}}).
+MLHub model id: `model_ecaas_agrifieldnet_bronze_v1`. Browse on [Radiant MLHub](https://mlhub.earth/model/model_ecaas_agrifieldnet_bronze_v1).
 
 ## ML Model Documentation
 
 Please review the model architecture, license, applicable spatial and temporal extents
 and other details in the [model documentation](/docs/index.md).
+
+## moto ---->
 
 ## System Requirements
 
