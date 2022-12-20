@@ -1,0 +1,277 @@
+{
+    "type": "Feature",
+    "stac_version": "1.0.0",
+    "id": "ref_agrifieldnet_competition_v1_source_004fa",
+    "properties": {
+        "datetime": null,
+        "start_datetime": "2022-01-01T00:00:00+00:00",
+        "end_datetime": "2022-05-31T00:00:00+00:00",
+        "eo:bands": [
+            {
+                "name": "B01",
+                "common_name": "coastal"
+            },
+            {
+                "name": "B02",
+                "common_name": "blue"
+            },
+            {
+                "name": "B03",
+                "common_name": "green"
+            },
+            {
+                "name": "B04",
+                "common_name": "red"
+            },
+            {
+                "name": "B05",
+                "common_name": "rededge"
+            },
+            {
+                "name": "B06",
+                "common_name": "rededge"
+            },
+            {
+                "name": "B07",
+                "common_name": "rededge"
+            },
+            {
+                "name": "B08",
+                "common_name": "nir"
+            },
+            {
+                "name": "B8A",
+                "common_name": "nir08"
+            },
+            {
+                "name": "B09",
+                "common_name": "nir09"
+            },
+            {
+                "name": "B11",
+                "common_name": "swir16"
+            },
+            {
+                "name": "B12",
+                "common_name": "swir22"
+            }
+        ]
+    },
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    83.02182751921237,
+                    19.27487401218633
+                ],
+                [
+                    83.02211145974293,
+                    19.297995285843214
+                ],
+                [
+                    82.99775974241012,
+                    19.298263452573703
+                ],
+                [
+                    82.99747921571804,
+                    19.27514183292262
+                ],
+                [
+                    83.02182751921237,
+                    19.27487401218633
+                ]
+            ]
+        ]
+    },
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "collection",
+            "href": "../collection.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "parent",
+            "href": "../collection.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "self",
+            "href": "ref_agrifieldnet_competition_v1_source_004fa.json",
+            "type": "application/json"
+        }
+    ],
+    "assets": {
+        "B01": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/source/ref_agrifieldnet_competition_v1_source_004fa/ref_agrifieldnet_competition_v1_source_004fa_B01_10m.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B01",
+                    "common_name": "coastal"
+                }
+            ]
+        },
+        "B02": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/source/ref_agrifieldnet_competition_v1_source_004fa/ref_agrifieldnet_competition_v1_source_004fa_B02_10m.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B02",
+                    "common_name": "blue"
+                }
+            ]
+        },
+        "B03": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/source/ref_agrifieldnet_competition_v1_source_004fa/ref_agrifieldnet_competition_v1_source_004fa_B03_10m.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B03",
+                    "common_name": "green"
+                }
+            ]
+        },
+        "B04": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/source/ref_agrifieldnet_competition_v1_source_004fa/ref_agrifieldnet_competition_v1_source_004fa_B04_10m.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B04",
+                    "common_name": "red"
+                }
+            ]
+        },
+        "B05": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/source/ref_agrifieldnet_competition_v1_source_004fa/ref_agrifieldnet_competition_v1_source_004fa_B05_10m.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B05",
+                    "common_name": "rededge"
+                }
+            ]
+        },
+        "B06": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/source/ref_agrifieldnet_competition_v1_source_004fa/ref_agrifieldnet_competition_v1_source_004fa_B06_10m.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B06",
+                    "common_name": "rededge"
+                }
+            ]
+        },
+        "B07": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/source/ref_agrifieldnet_competition_v1_source_004fa/ref_agrifieldnet_competition_v1_source_004fa_B07_10m.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B07",
+                    "common_name": "rededge"
+                }
+            ]
+        },
+        "B08": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/source/ref_agrifieldnet_competition_v1_source_004fa/ref_agrifieldnet_competition_v1_source_004fa_B08_10m.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B08",
+                    "common_name": "nir"
+                }
+            ]
+        },
+        "B8A": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/source/ref_agrifieldnet_competition_v1_source_004fa/ref_agrifieldnet_competition_v1_source_004fa_B8A_10m.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B8A",
+                    "common_name": "nir08"
+                }
+            ]
+        },
+        "B09": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/source/ref_agrifieldnet_competition_v1_source_004fa/ref_agrifieldnet_competition_v1_source_004fa_B09_10m.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B09",
+                    "common_name": "nir09"
+                }
+            ]
+        },
+        "B11": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/source/ref_agrifieldnet_competition_v1_source_004fa/ref_agrifieldnet_competition_v1_source_004fa_B11_10m.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B11",
+                    "common_name": "swir16"
+                }
+            ]
+        },
+        "B12": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/source/ref_agrifieldnet_competition_v1_source_004fa/ref_agrifieldnet_competition_v1_source_004fa_B12_10m.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B12",
+                    "common_name": "swir22"
+                }
+            ]
+        }
+    },
+    "bbox": [
+        82.99747921571804,
+        19.27487401218633,
+        83.02211145974293,
+        19.298263452573703
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
+    ],
+    "collection": "ref_agrifieldnet_competition_v1_source"
+}

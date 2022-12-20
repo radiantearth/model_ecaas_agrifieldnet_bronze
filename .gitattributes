@@ -1,0 +1,5 @@
+*.h5 filter=lfs diff=lfs merge=lfs -text
+*.joblib filter=lfs diff=lfs merge=lfs -text
+ls-files filter=lfs diff=lfs merge=lfs -text
+models/main/ filter=lfs diff=lfs merge=lfs -text
+models/pre-code/ filter=lfs diff=lfs merge=lfs -text
