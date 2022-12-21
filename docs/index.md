@@ -21,7 +21,7 @@ MLHub model id: `model_ecaas_agrifieldnet_bronze_v1`. Browse on [Radiant MLHub](
 
 ## Citation
 
-Ferreira, M.G. and Dung, T. "Looking further", Version 1.0, Radiant MLHub. [Date Accessed] Radiant MLHub
+Ferreira, M.G. and Dung, T. "Looking further: a crop type classification model for fields", Version 1.0, Radiant MLHub. [Date Accessed] Radiant MLHub
 
 ## License
 
