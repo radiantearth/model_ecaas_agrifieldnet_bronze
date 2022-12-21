@@ -1,45 +1,11 @@
-{{
+# Looking further: a crop type classification model for fields
 
-A template repository for a ML model to be published on
-[Radiant MLHub](https://mlhub.earth/models).
+In the [Zindi AgriFieldNet India Challenge](https://zindi.africa/competitions/agrifieldnet-india-challenge)
+this was the third place solution by the team `re-union` in the final round to classify crop
+types in agricultural fields across Northern India using multispectral
+observations from Sentinel-2 satellite.
 
-## Instructions for Model Contributors
-
-### Focus on inferencing
-
-The intent of models published to MLHub is to provide a pre-trained model in a
-Docker image which can be used to perform inferencing (predictions) on new
-datasets. Model re-training, or other use cases, are not the primary goal.
-Therefore the model codes and model checkpoint you contribute here should have
-a simple flow of INPUT_DATA -> inferencing -> OUTPUT_DATA.
-
-### Next Steps
-
-1. Contact ml@radiant.earth to discuss your model, get a `model_id`.
-
-2. Create a Git repository using this template, named as the model id, without
-the version suffix. For example model id `model_unet_agri_western_cape_v1`
-would use the repository name: `model_unet_agri_western_cape`. In a later step
-when the model is published we would use a Git tag named `v1`.
-
-3. :zap: Edit all the files in your new repository, and commit your model. Any file
-having `{{` mustache brackets `}}` should be manually edited, or if it does not
-apply, then the template text should be removed (like the current section).
-
-4. Contact ml@radiant.earth with any questions. When you are ready to submit
-your model, send us a link to your model repository.
-
-5. Finally, Radiant Earth will create a [STAC](https://stacspec.org) catalog item using the
-[ml-model STAC extension](https://github.com/stac-extensions/ml-model), and then
-publish it to [MLHub](https://mlhub.earth/models).
-
-}}
-
-# Looking further
-
-This model classifies crop types for each field based on the field as well as on its surroundings.
-
-![model_ecaas_agrifieldnet_bronze_v1](https://radiantmlhub.blob.core.windows.net/frontend-dataset-images/odk_sample_agricultural_dataset.png)
+![model_ecaas_agrifieldnet_bronze_v1](https://radiantmlhub.blob.core.windows.net/frontend-ml-model-images/model_ecaas_agrifieldnet_bronze_v1.png)
 
 MLHub model id: `model_ecaas_agrifieldnet_bronze_v1`. Browse on [Radiant MLHub](https://mlhub.earth/model/model_ecaas_agrifieldnet_bronze_v1).
 
@@ -47,8 +13,6 @@ MLHub model id: `model_ecaas_agrifieldnet_bronze_v1`. Browse on [Radiant MLHub](
 
 Please review the model architecture, license, applicable spatial and temporal extents
 and other details in the [model documentation](/docs/index.md).
-
-## moto ---->
 
 ## System Requirements
 
@@ -60,41 +24,23 @@ and other details in the [model documentation](/docs/index.md).
 
 |Inferencing|Training|
 |-----------|--------|
-|{{int}}GB RAM | {{int}}GB RAM|
-|           | NVIDIA GPU |
+|12 GB RAM | 30 GB RAM|
 
 ## Get Started With Inferencing
 
 First clone this Git repository.
-
-{{
-
-:pushpin: only include the following LFS section if a file > 100MB had to be
-committed using LFS
-
-<https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github>)
-
-}}
-
-{{
 
 Please note: this repository uses
 [Git Large File Support (LFS)](https://git-lfs.github.com/) to include the
 model checkpoint file. Either install `git lfs` support for your git client,
 use the official Mac or Windows GitHub client to clone this repository.
 
-}}
-
-{{
-
 :zap: Shell commands have been tested with Linux and MacOS but will
 differ on Windows, or depending on your environment.
 
-}}
-
 ```bash
-git clone https://github.com/{{your_org_name}}/{{repository_name}}.git
-cd {{repository_name}}/
+git clone https://github.com/radiantearth/model_ecaas_agrifieldnet_bronze.git
+cd model_ecaas_agrifieldnet_bronze/
 ```
 
 After cloning the model repository, you can use the Docker Compose runtime
@@ -102,64 +48,44 @@ files as described below.
 
 ## Pull or Build the Docker Image
 
-{{
-
-:pushpin: Model developer: please build and publish your images to [Docker
-Hub](https://hub.docker.com/). The images should be public, and should be
-tagged as `model_id:version` and `model_id:version-gpu`.
-
-For example model_id `model_unet_agri_western_cape_v1`
-would have two docker image tags published on Docker Hub:
-
-* `model_unet_agri_western_cape:1` for cpu inferencing
-* `model_unet_agri_western_cape:1-gpu` for gpu inferencing
-
-}}
-
 Pull pre-built image from Docker Hub (recommended):
 
 ```bash
-# cpu
-docker pull docker.io/{{your_org_name}}/{{repository_name}}:1
-# optional, for NVIDIA gpu
-docker pull docker.io/{{your_org_name}}/{{repository_name}}:1-gpu
-
+docker pull docker.io/radiantearth/model_ecaas_agrifieldnet_bronze:1
 ```
 
 Or build image from source:
 
 ```bash
-# cpu
-docker build -t {{your_org_name}}/{{repository_name}}:1 -f Dockerfile_cpu .
-# optional, for NVIDIA gpu
-docker build -t {{your_org_name}}/{{repository_name}}:1-gpu -f Dockerfile_gpu .
-
+cd docker-services/
+docker build -t radiantearth/model_ecaas_agrifieldnet_bronze:1 .
 ```
 
 ## Run Model to Generate New Inferences
 
-{{
+1. Prepare your input and output data folders:
 
-:pushpin: Model developer: do not commit training data to the data folder on
-this repo, this is only a placeholder to run the model locally for inferencing.
+    * The `data/input` folder in this repository contains some placeholder files to guide you.
+    The input data should follow the following convention. It should be placed in a directory named
+    `xxx_<tile_id>`,
+    where `xxx` is arbitrary and `<tile_id>` represents the id of the tile stored in that directory.
 
-}}
+    Here is a sample for reference.
 
-1. Prepare your input and output data folders. The `data/` folder in this repository
-    contains some placeholder files to guide you.
+    ```text
+    data/input/data_001c1
+    data/input/data_004fa
+    data/input/data_005fe
+    data/input/source_001c1
+    data/input/source_0023c
+    data/input/source_004fa
+    ```
 
-    * The `data/` folder must contain:
-        * `input/chips` {{ Landsat, Maxar Open-Data 30cm, Sentinel-2, etc. }} imagery chips for inferencing:
-            * File name: {{ `chip_id.tif` }} e.g. {{ `0fec2d30-882a-4d1d-a7af-89dac0198327.tif` }}
-            * File Format: {{ GeoTIFF, 256x256 }}
-            * Coordinate Reference System: {{ WGS84, EPSG:4326 }}
-            * Bands: {{ 3 bands per file:
-                * Band 1 Type=Byte, ColorInterp=Red
-                * Band 2 Type=Byte, ColorInterp=Green
-                * Band 3 Type=Byte, ColorInterp=Blue
-                }}
-        * `/input/checkpoint` the model checkpoint {{ file | folder }}, `{{ checkpoint file or folder name }}`.
-            Please note: the model checkpoint is included in this repository.
+    These directories will contain tiff files for three tiles (id `001c1`,
+    `004fa` and `005fe`). It does not matter where the bands or field ids are,
+    but note that the directory must split on `_` and the last portion must be
+    the tile id. This is in accordance with the competition data.
+
     * The `output/` folder is where the model will write inferencing results.
 
 2. Set `INPUT_DATA` and `OUTPUT_DATA` environment variables corresponding with
@@ -168,17 +94,17 @@ this repo, this is only a placeholder to run the model locally for inferencing.
 
     ```bash
     # change paths to your actual input and output folders
-    export INPUT_DATA="/home/my_user/{{repository_name}}/data/input/"
-    export OUTPUT_DATA="/home/my_user/{{repository_name}}/data/output/"
+    export INPUT_DATA="/home/my_user/model_ecaas_agrifieldnet_bronze/data/input/"
+    export OUTPUT_DATA="/home/my_user/model_ecaas_agrifieldnet_bronze/data/output/"
+    export MODELS_DIR="/home/my_user/model_ecaas_agrifieldnet_bronze/models"
+    export WORKSPACE_DIR="/home/my_user/model_ecaas_agrifieldnet_bronze/workspace"
     ```
 
-3. Run the appropriate Docker Compose command for your system
+3. Run the appropriate Docker Compose command for your system:
 
     ```bash
-    # cpu
-    docker compose up {{model_id}}_cpu
-    # optional, for NVIDIA gpu driver
-    docker compose up {{model_id}}_gpu
+    cd docker-services/
+    docker compose up model_ecaas_agrifieldnet_bronze_v1
     ```
 
 4. Wait for the `docker compose` to finish running, then inspect the
