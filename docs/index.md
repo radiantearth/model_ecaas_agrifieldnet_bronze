@@ -125,7 +125,69 @@ finally fed into a random forest for classification.
 Review the [GitHub repository README](../README.md) to get started running
 this model for new inferencing.
 
-## Methodology
+## Methodology and Development
+
+### Background
+
+A year ago our model got top score in the similar "Spot the Crop" competition.
+There you had to classify field crop types based on Sentinel S1 and S2 and also
+based on just S2 imagery (thus two streams).
+
+That time, we used a gradient booster and just a few derivative bands and it
+was enough.
+
+For this competition, we started there. However, it soon became apparent that
+this was a lot more difficult. The imagery was a lot more homogeneous and it
+became really difficult to discriminate between crop types. The previous
+approach simply did not work well this time.
+
+### New ideas
+
+Even in the previous challenge, we felt that we were not making use of the
+surroundings enough. If a river or mountain lay next to a field, surely it
+would influence the crop type! So this time we tried to also use the "dark"
+pixels - those pixels that are outside of any field's boundary.
+
+### Field borders
+
+We did this by creating a thick border around each field, and then a border
+around that border and so on. Each of these concentric borders were then
+evaluated and added to the list of features for each field.
+
+### Terrain classification
+
+We also used a pre-trained model to classify the terrain to the north, east,
+south and west of each field. We also applied the classification to the field
+itself to try and squeeze a bit extra out of the information.
+
+### Field distributions
+
+On the very last day of the competition, we also added the distribution of crop
+types of fields in the vicinity of the field being classified. This is not a
+new idea, we used it in the "Spot the Crop" challenge, and here it did add a
+bit to our score.
+
+### Clusters
+
+One of the best improvements we got in our score was when we started to cluster
+the data and then to pass the clusters on as features to the model. This made a
+huge difference to our position on the leaderboard and was one of our big
+breakthroughs for this competition. I think the reason for this is that we used
+a lot of derived bands and our features were very correlated, so that the
+clustering helped reduce that and helped the model fit better.
+
+### Oversampling
+
+The dataset is highly imbalanced and we got a bit of an improvement in score when we oversampled the data to get better class representation.
+
+### Model
+
+This time around, a gradient booster did not work as well, and we ended up
+using a random forest. The reason for this also, I think, is the correlation
+between the features given to the model.
+
+The model itself is a random forest. A gradient booster does not work as well
+because the features are highly correlated.
 
 ### Training
 
@@ -137,11 +199,6 @@ contributes more descriptive statistic features. A pre-trained EarthNet model
 is also used to classify the terrain to the north, east, west and south of the
 field and this classification is added to the features. Next the features are
 clustered and then up-sampled to be more balanced.
-
-### Model
-
-The model itself is a random forest. A gradient booster does not work as well
-because the features are highly correlated.
 
 ### Structure of Output Data
 
